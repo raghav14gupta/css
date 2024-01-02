@@ -1,0 +1,173 @@
+css3
+//cascading style sheet
+
+//3 ways to use css 
+
+1.inline css - yaha hum style attriute ki help  se css ko use kr sakte hai
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inline CSS Example</title>
+</head>
+<body>  //body tag ke ander hi likha jata h ise
+  <h1 style="color: blue; font-size: 24px;">Hello, Inline CSS!</h1> //ye style attribute ki help se kia
+  <p style="font-family: Arial, sans-serif; line-height: 1.6;">This is an example of using inline CSS.</p>
+  <p style="font-family: Arial, sans-serif; line-height: 1.6;"> </p>//
+</body>
+</html>
+
+2.internal css
+//yaha hum <style> tag ki help se css ko use krte hai
+//ye tmhara head tag ke ander likha jaega not in body
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Internal CSS Example</title>
+  <style>
+    /* Internal CSS */
+    h1 {                            //isko selector bolte hai (tag name){
+                                                     ander properties of css
+                                                                         }
+
+      color: blue;
+      font-size: 24px;
+    }
+
+    p {                                 //benefit of using inline css -yaha pure html me ek sath hum sare tag pe property laga sakte h like jitte bhi p tag use hue honge sbme css apply hojaegi selector ki help se  //ye inline me possible ni tha vaha humko individually sare tag me style attrtibute use krna padhta tha
+
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+3.external css
+//yaha hum .css extension ki alag se file banate h fir usko html file se link krte h using link tag
+//ye code modularity ko inc krta h bcz css code alag file me rhega html slag file me //more clean code
+<!DOCTYPE html>
+<html>
+<head>
+  <title>External CSS Example</title>
+  <link rel="stylesheet" href="styles.css">//ye connect krna bhot jaruri h
+</head>
+<body>
+  <h1>Hello, External CSS!</h1>
+  <p>This is an example of using external CSS.</p>
+</body>
+</html>
+
+.css page
+/* styles.css */
+
+h1 {
+  color: blue;
+  font-size: 24px;
+}
+
+  *********************inline vs internal vs external
+  //kuch principle dhyan rakhne padhte h while writing the code
+  1= SRP(single responsibility principle) yani ex- jaise.html file h to vo sirf html structure krne ka kaam hi kar ri ho ,, .css file h to usme sirf styling hi ho ri ho
+  ye ni hona chaiyey ki humko css me changes krne h  tb bhi html file me jana pade
+  is se redability kam hoti h user ki  not good to use
+
+  2 = dry(dont repeat yourself
+  ) same line of code ko baar baar repeat mt kro
+
+  //inline
+  ye SRP and DRY  dono pripncle ko violet krta h
+  bcz html page me hi css ka kaam hora h
+  //yaha har tag me alag se style attribute use krna padhta h ,
+  <p> tag maanlo pure code me 100 baar use kia to 100 baar ptag me style attribute daalke css apply krni padegi.. baad me koe change krne hue ex-color chnge to 100 jaga color change krna padega
+
+  //internal
+  //ye bhi SRP princliple ko violet krta h bcz <style> tag ko hum html file me hi likhte h to add css
+  //but ye DRY principle follow krta h
+  directly hum selector ki help se sare tag ko ek baar me target kr sakte h
+  //humko 100 jaga jaake koe style attribute add ni krna padhta
+
+  //external
+  ye SRP principle ko follow krta h bcz html code alag file me hota hai aur css code alag file m
+  ye DRY principle ko bhi follow krta h bcz css me selector ki help se hum sare tag ko target kr sakte h ,,indivually jaake attribute add ni krna padhta
+  //readability inc and reusability also
+
+  ********************************************************************************************************
+  important 
+  //which css will apply if we use three of all
+  1.inline,internal,external
+
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>Order of Appearance in CSS</title>
+  <link rel="stylesheet" href="styles.css">  //external with color blue in.css file
+
+  <style>
+    h1{
+        color:red;   //internal css with red color
+    }
+   </style>
+
+</head>
+
+<body>
+
+  <h1 style ="yellow"> raghav </h1>  //inline css with yellow color
+</body>
+</html>
+
+//line by line read krte hai
+jo color sbse last me apply hota h vahi reflect hoga
+so inline css ka color reflect hoga h1 tag me  bcz ye body tag me ata h baaki dono head tag me hi apply hojate h to end me inline css sbko override krdeta h
+
+important note//
+internal or external order of appearance pe depend krte h bcz
+<head> tag me
+agar hum <link rel="stylesheet"> //external css phele likhe
+aur
+<style>  //internal css baad me
+</style> 
+ 
+ //to jo baad me likha jata h vhi override krdeta h iscase me internall css apply hoga over external
+ //but agar hum order of appearnce change krde
+ <style>  //inline phele likha
+    </style>
+
+    <link rel="stylesheet">  //external baad me
+
+    //iss case me external css apply hoga ye override krdega interla css ko
+
+
+    so  ****************************************
+    inline css> baaki internal or external (order of appearnce pe depend karega unki jo hum likhe )
+************************************************************************************************************
+
+//box model
+//koe bhi element create karenge vo hamesha box ki  form me hi banta h(element wrap hota h box m)
+devtools ki help se inspect karke dekh bhi  sakte h jaise hi content pe hover karenge devtools me box form hoga content ke around
+
+4 important things in box model
+1.content(jo hum dete hai like hellow my name is raghav)
+2.border
+3.padding
+4.margin
+
+Content: The actual text inside the box.
+Padding: The space between the content and the border.(ye border ke inside ki spacing hoti h)
+Border: The line that goes around the padding and content.//its like a boundary around over content
+Margin: The space outside the border that separates the element from other elements.
+(ye border ke bahar ki spacing hoti h jo between 2 different box or element space provide krta hai)
+
+***********************note
+In CSS, the total height of a box includes the content height, padding, border, and margin.
+same for width we use content width,padding,border,margin
+User
+if we give height:100px then
+ChatGPT
+If you set the height of an element to 100px, it refers to the height of the content area only, not including padding, border, or margin.
+
+
+********************************************************************************************************8
+
+
+
