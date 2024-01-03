@@ -168,6 +168,78 @@ If you set the height of an element to 100px, it refers to the height of the con
 
 
 ********************************************************************************************************8
+ 
+selectors in css ***
+//basically hum selector use krte hai taaki hum speciific element ko target kr sake jisko humko properties deni hai
+
+selector{
+  property:value;
+}
 
 
+types of selectors
 
+1.simple selector
+2.combinator selectors
+3.pseudo-class selector
+4.pseudo-element selectors
+5.attribute selector
+
+**********************
+1.simple selector me
+types hote h
+
+1.tag/element selectors-
+tagname/element name ki help se particular element ko style kr sakte h 
+eg- h1(tag/element name){
+  property:value;
+}
+
+2.id selectors  //# use hota h for id   with idname se target krte h particular id ko
+ ye unique hota h yaha id ke hisab se element ko target krte h(har element ki id unique hogi)
+ jis element me vo id hogi  vo target hoga yaha tag koe bhi ho us se koe mtlab ni yaha id ke base pe target krte h elemt ko
+ (#id_name){
+  property:value;
+ }
+3.class selector // . dot use hota h for class
+ye multiple element me lag skta hai but condition h sbka class name same hona chaiyey(jb group me sbko same style krna ho tb sbko same class name dedo fir sbko ek sath target kr sakte h)
+//yaha bhi element/tag koe bhi ho us se mtlab ni yaha class name ke basis pe target krte h element ko not on basis of tag name.
+.(classname){
+  property:value;
+}
+4.grouping selector 
+different selectors ko ek sath use kr sakte h
+iski help se hum group me alag alag element/class/id ko target kr sakte h jinko same styling deni ho
+#one,.two,h1,p{    //yaha id bhi h,class bhi,tag/element vhi(comma ke through separate krte h)
+    color: deeppink;
+}
+
+5.universal selector // 8 is used
+ye basically sare element jitte bhi present h sbko style krdeta h 
+*{
+  property:value;
+}
+
+6.element class selector-ye tb useful hota h jb humko koe particular class ko alag dena hota h 
+like-
+<p class="raghav"></p>
+<p class="raghav"></p>
+<p class="raghav"></p>
+<span class="raghav"></span>
+
+yaha class name sbka same h but humko sirf spantag vali class ko style krna h
+agar .classname se karenge to voto sari class me apply hojaega jinka same same h
+iss case me element class selector kaam aata h
+syntax-
+(element/tagname).(dot)(className)
+span.raghav{
+  color:red;
+}
+*********************************************************************************************************
+ 
+2.combinator selector-
+**********************
+1.general siblig selector -(~) denotion
+2.adjacent sibling selector -(+) denotion
+3.child selector -(>) denotion
+4.descendant selector-( with space ) denotion.
