@@ -237,9 +237,69 @@ span.raghav{
 }
 *********************************************************************************************************
  
-2.combinator selector-
+2.combinator selector- basically different type of selector ko ek sth use kr sakte hai
+dom structure samjhna bhot jaruri h parent child relationship
+<body> //ye root element h
+  <div>  //level 1 (parent )
+      <p>p1</p>  //level 2(ye child element hote h)
+  </div>
+  
+  <h1>  //level 1
+     <p>p2</p>  //level2(ye child element hote h)
+  </h2>
+  <p>p3</p3> //level 1
+</body>     
+
+ye <div>,<h1>,<p> ye sb aapas me siblings hai bcz ye hirerchial level pe same jaga h dom me
+<p> unke ander ara h vo child h
 **********************
-1.general siblig selector -(~) denotion
-2.adjacent sibling selector -(+) denotion
-3.child selector -(>) denotion
-4.descendant selector-( with space ) denotion.
+types of combinator selector-
+
+1.general siblig selector -(~) denotion  //ye dono sibling pe work krte h
+isme jaise hi reference element end hoga uske aage jitte bhi siblings hai(same level)(jo humko style krne they) vo style hojaenge
+
+example- select all paragraphs which comes inside h1
+yaani h1(reference element h) jisme humko p elemenrt search krke style krna h
+
+<div>
+<h1>raghav</h1> //rule -jaise hi reference element ka end hoga (reference element  jaha bhi end ho hamesha uske baad ka next sibling hi lena hota h)
+<p>p1<p>   //uske sare adjacent siblings ko style karenge
+<p>p2<p>     //uske sare adjacent siblings ko style karenge
+<span>
+<p>p3</p>  //ye style ni hoga bcz ye child h not sibling
+</span>
+</div>
+
+2.adjacent sibling selector -(+) denotion //ye dono sibling pe work krte h
+ye sirf ek right adjacent element ko hi style krta h not more then that(jispe styling krni h)
+like h1+p{
+
+}  agar h1 end hone ke baad next adjancent me para present h to vo style hojaega ..agar koe dusra element present hua to style ni lagegi..and agar para hamara ek step baad aya(like h2 ke baad p present h )tb bhi styling apply ni hogi
+bcz isme sirf next adjacent element hi style hota h jo humne pass kia tha
+<h1>1</h1>
+agar <p> iske just next aage hoga to styling hogi verna ni hogi
+ 
+
+*********************************************************************
+3.child selector -(>) denotion //ye child pe work krte h
+ye sirf unko style krta h jo isse directly connect hai no grandchild allowed
+
+<div> parent
+   <p> child  //allowd
+      <span>
+          <p>  //grand child(not styling done in this)
+**************************************************************
+4.descendant selector-( with space ) denotion. //ye bhi child pe work krta hai
+ye sare  element ko style krdeta h jo directly connect ho(childs) or indirectly connect ho as a (grand child)
+<div> parent
+   <p> child  //allowed
+  <span>
+          <p>  //grand child  //allowed
+********************************
+syntax to use combinator-
+1.reference element(jiske ander element ko search krna h jispe styling krni h) 2.combinator symbol 3.element to select(jis particular elements me styling deni h)
+like -  div~p(div container ke ander  p element ko style krna h)
+
+
+***************************************************************************************8888
+*****************************************************************************************8

@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+<style>
+    /* <!--example of decendent selector--> */
+.a p{
+    color: blue;
+}
+
+/* example of child selector */
+.b>p{
+    color: red;
+}
+
+/* <!--example of general sibling--> */
+div~p{
+    color: greenyellow;
+}
+
+/* example of adjacent sibling */
+div+p{
+    color: brown;
+}
+
+</style>
+
+</head>
+
+<body>
+    <!--example of decendent selector-->
+  <div class="a">
+    <p>p1</p> <!--ye sare child element ko style krdega(jo directly connect ho(like own child) aur indirectly(like child ke child as grandparent of them)) jo bhi div container ke ander h -->
+    <p>p2</p> <!--//styled-->
+    <span>
+        <p>p3</p> <!--//ye span ke ander tha but decendent selector me ye bhi style hojaega bcz ye div container ke ander h yaani ye div ka child hi h-->
+    </span>
+  </div>
+
+  <!--example of child selector-->
+  <!--ye sirf unhi child ko style krta h jo directly link ho target element se(no grandparenting allowed like child ke child ko style ni kr sakte isme)-->
+<div class="b">
+    <p>p4</p> <!--ye sare child element ko style krdega jo bhi div container ke ander h -->
+    <p>p5</p> <!--//styled-->
+<span> <!--ye sibling tha div ka-->
+        <p>p6</p> <!--is case me iska parent span tha .hamara div directly link ni tha is pagaraph se(vo grandparent h bcz span uska child h aur ye para span ka child) isiiye isme style ni lagegi-->
+    </span>
+</div>
+
+<!--example of general sibling-->
+<div>
+    <h1>h1</h1>
+    <p>p7</p>
+</div> 
+<p>p8</p> <!--sirf siblings ko style karta hai aage ke (ex-div~p likha tha to yaani jaise hi div container end hoga uske aage jitte bhi paragraph aaenge siblings me vo style honge(child vale pararaph style ni hote))-->
+<div class="c">raghav
+    <p>p9</p>
+</div>
+<p>10</p> <!--ye style hoga bcz sibling h-->
+
+<!--example of adjacent sibling-->
+<!--humne div+p lia tha yaani jaise hi div container end hoga uske aage ke paragraph lene h-->
+<!--but adjancent me sirf 1 adjancent element ko leete hai uska next p hua to vo style hojaega agr p ki jaga koe aur hua to style ni hoga-->
+<!--div ke adjancent right me hi search hota h just jo ekdm next right ho-->
+
+<div>
+    <p>11</p>
+</div>
+<p>p12</p> <!--sirf ye style hoga bcz ye next adjacent hai div ka-->
+<p>13</p> <!--yaha same p present h but ye style ni hota sirf next adjancent vala hi style hota h...agar vo element next adjancet me na hota aage kahi hota 1-2step baad to kisi me bhi styling ni hoti-->
+<h2>example</h2>
+<p>p14</p>
+
+</body>
+</html>
