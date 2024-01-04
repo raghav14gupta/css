@@ -457,33 +457,39 @@ types of positions
 1.sticky-by default position hoti hai ye element ki 
 yaha hum top down right direction use ni kr sakte yaha kaam ni karega 
 
-2. relative- ye bhi element ki original position show krta hai but yaha pe hum top,down,right,left direction me element ko move karva sakte hai 
+2. relative- ye bhi element ki original position show krta hai(jo html me pass hoti h) but yaha pe hum top,down,right,left direction me
+ element ko move karva sakte hai ()
 //yaha order of element same rhta hai like 3 box they 1,2,3 
 humne 2nd box ko right move krdia ekdm //iscase me bhi neeche ka box3 uski jaga ni lega uper move krke 
-//bcz relative property use krne se memory space maintain rhta hai element  ka
+//bcz relative property use krne se memory space maintain(reserve) rhta hai element  ka
 
-3.position relative - ye bhi same relative ki trah hai but yaha jo position move hoti hai vo hamesha parent container ke acc hoti hai 
-//yaha ordering(natural flow of document) maintain ni rhta //agar ek box ko move kia to remaining box uski place lelete hai yaha overlaping hojati h  har box ki fixed memory space ni hoti
+3.position absolute - ye bhi same relative ki trah hai but yaha jo position move hoti hai vo hamesha nearest parent container ke acc hoti hai 
+//yaha ordering(natural flow of document) maintain ni rhta //agar ek box ko move kia to remaining box uski place lelete hai yaha overlaping hojati h  yaha box ki fixed memory reserve ni hoti
 <body>
      <div-parent>
           <div-absolute>box</div-absolute>  ///yaha jo bhi movement hoga vo with respect to parent container hoga 
-                                              within parent container hi movement hoga absolute ka
+                                             like top=10px dia to ye parent container ke top se 10px move hoga absolute
      </div-parent>
 </body>
 
 important--humhe parent class ko relative banana hoga hamesha tbhi hum absolute property use kr sakte hai for positioning 
 //agar bychance parent container nhi hua ya usko relative property ni di 
 //is case me <body> as a parent work karegi bcz sare element usi ke ander bane h 
-  //iscase me hamara absolute ka box puree body me move karega jitti humhe screen visible hai
+  //iscase me hamara absolute ka box puree body me move karega jitti humhe screen visible hai like agar top=10px dia to ye body containerbox se hamara absolute 10px move hoga top se
 
-  4.fixed- ye hamesha screen pe fix hojaega jitta hum isko  value denge(top,left.right,bottom se) ..us value ke according ye apni position pe fix hojata hai 
-  chahe hum kitta bhi scroll kare  ..
+  4.fixed- ye hamesha screen pe fix hojaega jitta hum isko  value denge(top,left.right,bottom se) ..us value ke according ye apni position pe move krkepe fix hojata hai 
+  chahe hum kitta bhi scroll kare vo fixed rhega ..
+  imp ---yaha jo value dete h vo according to viewport hoti hai like agar top se 10px dia to hamara jo box hai vo viewport se 10px move hoga ..
 
   5.sticky- ye combination hota hai relative + fixed position ka 
-  //maanlo 3 box they humne box 1 ko move kia kisi direction me //to uski jaga koe dusra box ni lega //memory occupied rhti hai us box ki bhale hi vo dusri jaga move krgya ho 
+  //ye starting me apni normal position me rhta hai jaise relative rhta hai
+  //maanlo 3 box they humne box 1 ko move kia kisi direction me //to uski jaga koe dusra box ni lega //memory reserved rhti hai us box ki bhale hi vo dusri jaga move krgya ho 
   //ye order(natural flow of document ) maintain rakhta hai  as relative positioning 
 
   //it is also work as fixed bcz jis box me positioning di thi vo apni place pe fix hojaega //
+  //most important point -hamara sticky as a fixed tb behave krna shru karega -jb maanlo humne top=10px pass kia tha 
+  //to jaise hi viewport se hamare box(jisko position sticky di) ka distance 10px hua top se , hamara box fixed hojaega usi time..
+  //top ki value pass krna jaruri hai sticky ke case me...tbhi vo threshold meet hone pe fixed banega.
   baaki box move karenge(jb hum scrolling karenge) bus vo particular box jispe sticky position di hai vo move ni karrega ****until its parent container end//imp 
   jaise hi parent container ke bahar gye hum scroll krte krte sari properties remove hojaengi 
 <body>
