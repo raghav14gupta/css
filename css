@@ -311,6 +311,7 @@ like -  div~p(div container ke ander  p element ko style krna h)
 
 3.pseudo class selectors-
 ye basically use krte hai hum jab humko apne element ki state ke uper styling krni ho -clicking,hovering ,etc
+temporary styling hoti h like jbtk hum hover karenge,click karenge etc tbhi tk vo styling rhti hai mouse htaya styling gayab ..
 basically ye hyperlinks aur input tag me jyada use hota h 
 
 Certainly! Here are some common pseudo-class selectors in CSS:
@@ -379,14 +380,70 @@ selector(tag name,class,id etc)::pseudo-element(like before,after etc) {
 types-- 
 here are some common pseudo-element selectors with brief explanations:
 
-::before - Inserts content before the selected element's content.
-::after - Inserts content after the selected element's content.
+::before - Inserts content before the selected element's content.//most imp
+::after - Inserts content after the selected element's content.//most imp
 ::first-line - Styles the first line of text within an element.
 ::first-letter - Styles the first letter of the text within an element.
 ::selection - Styles the portion of text selected by a user.
 ::placeholder - Styles the placeholder text in an input or textarea element.
 ::backdrop - Styles the background behind an element when it's presented in fullscreen mode.
 
+example--
+selector::before {
+  /* Styles */
+  content: ""; /* Content to be inserted */
+}
+selector::after {
+  /* Styles */
+  content: ""; /* Content to be inserted */yaha kuch bhi de sakte h - text,image.,url etc
+}
+
+
 **************************************************************************************
+4.attribute selectors -hum elements me more styling daal sakte hai with help of attributes
+********************* 
 
+element[attribute="value"] {                   like 
+  /* Styles */ 
+}
 
+ex- input[type="text"]{
+  color:green;   }
+
+ ex- a[href^="https://"] {
+    /* Styles for links starting with "https://" */
+  }
+ wex- img[src=".png"] {
+    /* Styles for PNG images */
+  }
+  
+  
+code- 
+let's say you have a list of links and you want to style links that open in a new tab 
+(with the target="_blank" attribute):
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Attribute Selector Example</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <ul>
+    <li><a href="https://example.com">Normal Link</a></li>
+    <li><a href="https://example.com" target="_blank">Link - Opens in New Tab</a></li>
+    <li><a href="https://example.com">Normal Link</a></li>
+    <li><a href="https://example.com" target="_blank">Link - Opens in New Tab</a></li>
+  </ul>
+</body>
+</html>
+ //css 
+ /* Styles links with target="_blank" attribute */
+a[target="_blank"] {     //yha humne sare link pe styling applly krdi with help of attribute selector
+  color: red;
+  font-weight: bold;
+  text-decoration: underline;
+}
+***********************************************************************************
+****************************************************************************************8
+*******************selectors over *********************************************************
