@@ -447,3 +447,49 @@ a[target="_blank"] {     //yha humne sare link pe styling applly krdi with help 
 ***********************************************************************************
 ****************************************************************************************8
 *******************selectors over *********************************************************
+
+positions in css  //most important topic of css 
+-positions ki help se hum elements ko kisi bhi jaga move krva sakte hai makes content more beautifull 
+flexbox and grid ek fix symmentry me hi content ko arrange kr sakte hai like x-axis and y-axis ..isse content thoda less styllish dikhta h 
+positions ki helps se kisi bhi directions me arrange kr sakte hai  
+
+types of positions 
+1.sticky-by default position hoti hai ye element ki 
+yaha hum top down right direction use ni kr sakte yaha kaam ni karega 
+
+2. relative- ye bhi element ki original position show krta hai but yaha pe hum top,down,right,left direction me element ko move karva sakte hai 
+//yaha order of element same rhta hai like 3 box they 1,2,3 
+humne 2nd box ko right move krdia ekdm //iscase me bhi neeche ka box3 uski jaga ni lega uper move krke 
+//bcz relative property use krne se memory space maintain rhta hai element  ka
+
+3.position relative - ye bhi same relative ki trah hai but yaha jo position move hoti hai vo hamesha parent container ke acc hoti hai 
+//yaha ordering(natural flow of document) maintain ni rhta //agar ek box ko move kia to remaining box uski place lelete hai yaha overlaping hojati h  har box ki fixed memory space ni hoti
+<body>
+     <div-parent>
+          <div-absolute>box</div-absolute>  ///yaha jo bhi movement hoga vo with respect to parent container hoga 
+                                              within parent container hi movement hoga absolute ka
+     </div-parent>
+</body>
+
+important--humhe parent class ko relative banana hoga hamesha tbhi hum absolute property use kr sakte hai for positioning 
+//agar bychance parent container nhi hua ya usko relative property ni di 
+//is case me <body> as a parent work karegi bcz sare element usi ke ander bane h 
+  //iscase me hamara absolute ka box puree body me move karega jitti humhe screen visible hai
+
+  4.fixed- ye hamesha screen pe fix hojaega jitta hum isko  value denge(top,left.right,bottom se) ..us value ke according ye apni position pe fix hojata hai 
+  chahe hum kitta bhi scroll kare  ..
+
+  5.sticky- ye combination hota hai relative + fixed position ka 
+  //maanlo 3 box they humne box 1 ko move kia kisi direction me //to uski jaga koe dusra box ni lega //memory occupied rhti hai us box ki bhale hi vo dusri jaga move krgya ho 
+  //ye order(natural flow of document ) maintain rakhta hai  as relative positioning 
+
+  //it is also work as fixed bcz jis box me positioning di thi vo apni place pe fix hojaega //
+  baaki box move karenge(jb hum scrolling karenge) bus vo particular box jispe sticky position di hai vo move ni karrega ****until its parent container end//imp 
+  jaise hi parent container ke bahar gye hum scroll krte krte sari properties remove hojaengi 
+<body>
+  <sticky-container>  //parent container
+      <box1>
+           box  -//is box pe sticky property di -/jbtk hum apne parent container ke ander hai tbtk sticky property work krti hai
+      </box1>
+  </sticky-container>
+</body>
