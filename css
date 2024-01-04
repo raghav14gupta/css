@@ -253,6 +253,11 @@ dom structure samjhna bhot jaruri h parent child relationship
 ye <div>,<h1>,<p> ye sb aapas me siblings hai bcz ye hirerchial level pe same jaga h dom me
 <p> unke ander ara h vo child h
 **********************
+syntax to use combinator-
+1.reference element(jiske ander element ko search krna h jispe styling krni h) 2.combinator symbol 3.element to select(jis particular elements me styling deni h)
+like -  div~p(div container ke ander  p element ko style krna h)
+
+
 types of combinator selector-
 
 1.general siblig selector -(~) denotion  //ye dono sibling pe work krte h
@@ -263,10 +268,10 @@ yaani h1(reference element h) jisme humko p elemenrt search krke style krna h
 
 <div>
 <h1>raghav</h1> //rule -jaise hi reference element ka end hoga (reference element  jaha bhi end ho hamesha uske baad ka next sibling hi lena hota h)
-<p>p1<p>   //uske sare adjacent siblings ko style karenge
-<p>p2<p>     //uske sare adjacent siblings ko style karenge
+<p>p1<p>   //uske sare  siblings ko style karenge
+<p>p2<p>     //uske sare  siblings ko style karenge
 <span>
-<p>p3</p>  //ye style ni hoga bcz ye child h not sibling
+<p>p3</p>  //ye style ni hoga bcz ye child h(level 2) not sibling(sibling same level vale hote h)
 </span>
 </div>
 
@@ -302,4 +307,86 @@ like -  div~p(div container ke ander  p element ko style krna h)
 
 
 ***************************************************************************************8888
-*****************************************************************************************8
+*****************************************************************************************
+
+3.pseudo class selectors-
+ye basically use krte hai hum jab humko apne element ki state ke uper styling krni ho -clicking,hovering ,etc
+basically ye hyperlinks aur input tag me jyada use hota h 
+
+Certainly! Here are some common pseudo-class selectors in CSS:
+
+:hover - Styles an element when the mouse pointer is over it.
+:active - Styles an element that is currently being activated (e.g., clicked).
+:focus - Styles an element that has gained focus.
+:visited - Styles a link that has been visited by the user.
+:first-child - Selects the first child element of its parent.
+:last-child - Selects the last child element of its parent.
+:nth-child(n) - Selects elements that match a specific position in a group of siblings.
+basically ye hyperlinks aur input tag me jyada use hota h 
+ ******************8
+ <anchor tag me use hone vale pseudo classes></anchor>
+state of hyperlink -
+1.link -ye jb page load hota hai us time ki state h (bydefault blue hota h)
+2.hover -jb mouse ko hover krte hai link ke uper
+3.active -jb link pe click krke rakhte h(button pressed) to ye state aati hai
+4.visited-jb click ko open krdete hai yaani button released(hote hi hum link visit kr lete hai)
+
+syntax: selector(like tag,class,id ) : pseudo-class ( like state -hover,active,visited,focus,disable etc)
+(ye colon hi represent krta h pseudo class ko)
+
+for example  a:hover{
+          color:blue;   //ye btara hai jaise hi hum hover karenge link pe color blue hojaega uska
+}
+
+//input tag me bhi use aate hai 
+
+here are some commonly used pseudo-selectors for the <input> tag:
+
+:hover - Styles the input when the mouse is over it, helpful for visual feedback.
+:focus - Styles the input when it's selected or has focus, useful for indicating where a user is typing.
+:disabled - Styles the input when it's disabled, useful for visually indicating non-interactable fields.
+:valid - Styles the input when its value meets the specified validation criteria (e.g., a valid email or required format).
+:invalid - Styles the input when its value doesn't meet the specified validation criteria.
+
+example -The :focus pseudo-class selector is used to style an element when it gains focus, 
+typically through user interaction like clicking or tabbing onto it, making it useful for indicating where a user's attention or cursor is on a webpage, 
+especially in forms or interactive elements.
+
+<style>
+        input:focus{
+            background-color: green;  //jaise hi hum input box me click karenenge uska bg color change hojaega
+        }
+    </style>
+
+    *********************
+    4.pseudo element selector- ye element ke kuch specific part me apply kr sakte hai 
+    like kisi word ka first letter bada krdiya 
+    like paragraph element ki specific first line ka font change krdiya ..etc 
+
+    important************diff between pseudo class vs pseudo element selector 
+
+ Pseudo-class selectors target specific states of elements (like :hover, :active, :focus) based on user interaction or state changes.
+
+Pseudo-element selectors, on the other hand, target and style a specific part of an element (like ::before, ::after, ::first-line) rather than a state, 
+allowing for the creation of virtual elements or styling specific parts of an element's content.
+
+***
+syntax - we use double :: in this pseudo element selector
+selector(tag name,class,id etc)::pseudo-element(like before,after etc) {
+  /* Styles */
+}
+
+types-- 
+here are some common pseudo-element selectors with brief explanations:
+
+::before - Inserts content before the selected element's content.
+::after - Inserts content after the selected element's content.
+::first-line - Styles the first line of text within an element.
+::first-letter - Styles the first letter of the text within an element.
+::selection - Styles the portion of text selected by a user.
+::placeholder - Styles the placeholder text in an input or textarea element.
+::backdrop - Styles the background behind an element when it's presented in fullscreen mode.
+
+**************************************************************************************
+
+
