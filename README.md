@@ -9,5 +9,4 @@ https://youtu.be/yFXEur3SCGI?si=0B3xSmcz6OF0vstS
 <br>
 https://youtu.be/FrZNypfGK28?si=fLtq0HpmU0-FWIi6
 <br?>
-good articles for css,js -
-https://www.freecodecamp.org/news/author/joy/
+good articles for css,js -https://www.freecodecamp.org/news/author/joy/
