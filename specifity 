@@ -1,0 +1,21 @@
+universal selector -specificity = 0
+2- tags,pseudo-elements = 1 score 
+3- class,pseudo-class,attribute = 10 score. //jinki specificity same hai vaha order of appearance dekhte hai jo last me aya uski styling hogi
+4.id selector = 100 score 
+5.inline css = 1000 score 
+6- !important = 10,000 //most priority
+
+
+combinator selectors ke case me grouping hoti h selectors  ki 
+//in  case me sum hota hai individual selectors ka 
+
+1.a[href="#"] = isme ek achor tag hai + ek attribute selector (1 + 10) = 11 score 
+2 .class #myid = 10 + 100 = 110 
+
+//aise hi sbki specificity find kr sakte hai ..
+
+important baat _-   jb bhi same element pe different different style eksath lag ri ho 
+tb sbse phele specificty check kro 
+is se pta lag jaega kis selector ki styling deni hai 
+//agar specificty se bhi pta ni lagta tb order of appearance check kro 
+//is case tk mostly pta lag jata h konsi style apply hogi 

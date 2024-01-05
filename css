@@ -514,7 +514,10 @@ uske liye 4 stages check hoti hai
 //4 stages of cascading ---
 
 1.position/order of appearance -like jo last me styling apply hui vo show hogi -
-2.specificty - 
+
+2.specificty - it is a scoring system which is applied on selectors //
+har selector ko kuch score dia jaata hai jitta jyada score utti jyada priority uski ..
+
 3- origin - -ye btata hai css kaha se apply hui h 
      like -i broweser(user agent stylesheet) css -kuch css browser(like chrome) khud deta hai(jaise humne koe div banaya to usme bydeault phele se padding,margin ,some font size,color etc hoti h...h1 tag ka font bada hoga p se bydefault)
      ii-os css -os deta ha kuch css style like mac me kuch text likhte hai to uska font style thoda alag rhta hai as compared to windows 0r linux.
@@ -528,3 +531,60 @@ order-- browser>os>author(user) >authored css !important > os css  !important >>
 
 *********************************************************************************************************88888
 ******************************************************************************************************
+
+inheritance in css
+__________________ 
+
+isme basically child apne parent ke color ko automatically inherit krleta hai 
+
+like - 
+<body >
+   <ul>
+      <li>list items </li>   yaha <li> apne parent ka color inherit karlega
+                            //agar humne ul me koe color ni dia tha is case me ul apne parent yaani <body > se color inherit karta h hamesha
+                              //aur vohi same color ul  se li me inherit hojaega 
+                              //by default body ka color black hota hai isliye jb bhi hums list create krte hai vo black color me banti h ..
+   </ul>
+</body>
+
+********************************************************
+
+z-index  - //important
+_______ 
+ye overlapping ke case me bhot jyada kaam aata hai 
+like hamare pass ek logo hai aur ek background image --- 
+problem aari hai ki hamara logo  background image ke neeche chala gya hai (yaani bg-image ne overlap krlia logo ko) 
+//is case me z-index kaam aaega 
+//jiska z index jitta jyada hoga vo cheez uttni uper rhegi  
+like 3 box hai 1,2,3 respectively ,, box1-zindex =1 ,,box2 = zindex=2,, box3 zindex = 0 ;;
+yaani -- overlapping condition me box2 sbse uper hoga uske neeche box1 hoga sbse neeche box3 hogaa 
+
+///note - hamesha position property use krni padegi jb z-index use karenge 
+//static position XXXX kbhi ni use hoga 
+//mainly absolute lete h per relative bhi le sakte hai 
+
+************************************************************
+**************************************************************
+display properties 
+___________________ - 
+
+1.block - ye hamesha new line se start hoga ..complete width leleta hai screen ki.
+       like div 
+
+2.inline - ye new line se start ni hota ..jitte content ki width hogi utti hi space lega sirf
+like span tag 
+3.inline-block  - same as inline  but ek bhot major difference hai inline vs inline-block me 
+
+
+inline me hum kabhi bhi width and height ni de sakte content ko //major drawback 
+//inline-block and block display property me height and width de sakte hai //isiliye ye dono jyada use hote hai 
+
+//note - hum kisi bhi element ki display property ko  change kr sakte hai 
+like div hamara block  element hota ha 
+per agar hum 
+div{
+  display:inline ;  //krde to vo as a inline behave krne lagega ..same hum inline element ko block me convert kr sakte h 
+}
+
+***************************************************************
+
