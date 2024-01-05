@@ -499,3 +499,32 @@ important--humhe parent class ko relative banana hoga hamesha tbhi hum absolute 
       </box1>
   </sticky-container>
 </body>
+
+*******************************************************************************************8
+********************************************************************************************
+//important topic 
+//specificity in css 
+ 
+cascading style sheet 
+//cascading means - jub hum same element ke uper different different css ki properties ko apply krdete hai 
+un conflicts ko kaise handle krna hai ye cascading algorithm ki help se hota hai 
+
+ab browser ko kaise pta lagega which css to apply 
+uske liye 4 stages check hoti hai 
+//4 stages of cascading ---
+
+1.position/order of appearance -like jo last me styling apply hui vo show hogi -
+2.specificty - 
+3- origin - -ye btata hai css kaha se apply hui h 
+     like -i broweser(user agent stylesheet) css -kuch css browser(like chrome) khud deta hai(jaise humne koe div banaya to usme bydeault phele se padding,margin ,some font size,color etc hoti h...h1 tag ka font bada hoga p se bydefault)
+     ii-os css -os deta ha kuch css style like mac me kuch text likhte hai to uska font style thoda alag rhta hai as compared to windows 0r linux.
+     iii-authored css - ye user applly krta hai 
+
+     ***authored css > highest priority then other(browser or os) but agar browser ki property me !important laga h to us se jyada priority kisi ki nhi usko koe ni  change kr sakta ..
+     *****most imp
+order-- browser>os>author(user) >authored css !important > os css  !important >> browsercss !important(most priority).
+***
+4-important  - !important (ye jis property ke aage likh dia uski property hi apply hogi most ppriority !important ko di jaati hai css me)
+
+*********************************************************************************************************88888
+******************************************************************************************************
