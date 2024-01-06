@@ -598,7 +598,7 @@ like restraunt list of swiggy -vaha bhot sari rows and columns use hue hai to sh
 
 
 _**************______properties of flexbox: 
-
+//note - ye sari properties parent(nearest) container pe lagti hai jo hamare child ka h jispe property deni hai
 1.display:flex; propertiy likhni padegi to use flexbox in your code //parent container me 
 
 2.flex-direction- is se hum content ko rowwise ya column wise arrange kr sakte h 
@@ -641,6 +641,8 @@ justify-content:space-between
 justify-content:space-evenly .
 
 use this link -https://www.freecodecamp.org/news/css-flexbox-tutorial-with-cheatsheet/
+
+*
 ______________________________________________________________________________________________
 
 6.align-items - yaha elements ko arrange kr sakte hai flexbox me with respect to y-axis.
@@ -679,3 +681,27 @@ gap: 50px 10px ;aise bhi dete hai
     first row ka gap and sencond column ka gap .
 
  ___________________________________________________________________________________________   
+ *********most important baat 
+maanlo hum flex ki direction  row se column me change krde 
+is case me x-axis aur y-axis ki direction bhi  change hojaati hai 
+yaani jo properties phele hum x-axis ke liye use kr re they(like justify-content) vo direction:column hone ke baad 
+ab y-axis pe styling krne ke kaam aaengi (ab justify-content se y-axis pe element arrange honge flexbox me)
+
+same for other 
+like jb flex-row hota tha 
+tb align items y-axis me items ko arrange krne ke kaam aata tha 
+
+per jaise hi flex-direction-column kari 
+ab align-items/content - ye sb x-axis pe items ko arrange karenge flexbox me 
+
+bhot importanthai ye samjhna ///////////////////////
+______________________________________________________________________________________-----
+
+  //ye property child items me apply hoti hai flexbox me 
+  ______________________________________________________
+  9-flex-grow - is se flex-items ka size inc kr sakte hai 
+  particular kisi flex-item(child element) ka bhi kr sakte hai id ya class dedo fir usko target krke flex-grow property dedo
+  10-flex-shrink-ye size kam kr deti hai 
+
+  __________________________________________________________________________________
+  ((((((((((((((((((((((((((((((((((((((((((((((((((()))))))))))))))))))))))))))))))))))))))))))))))))))
