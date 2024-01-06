@@ -587,4 +587,95 @@ div{
 }
 
 ***************************************************************
+https://www.freecodecamp.org/news/css-flexbox-tutorial-with-cheatsheet/
 
+flexbox //most important -  basically ye bhi ek display property hai iski help se hum layout(blue print) bana sakte h ki hamara content kaise arrange hoga 
+_______
+used to create 1d layouts -means ya to row me content arrange hoga or ya column me(dono me se ek at a time use hora hoga) aisi condition me flexbox use hota hai 
+like- navbar -isme ek row me sara content arrange hoga 
+//grid helpful hai 2d layout banane me - jaha ek sath row and columns use hote hai 
+like restraunt list of swiggy -vaha bhot sari rows and columns use hue hai to show all list of restaurant..
+
+
+_**************______properties of flexbox: 
+
+1.display:flex; propertiy likhni padegi to use flexbox in your code //parent container me 
+
+2.flex-direction- is se hum content ko rowwise ya column wise arrange kr sakte h 
+1 baar me ek hi direction me arrange hoga bcz 1d layout hota h flex 
+bydefault-jb hum flex use krte hai to vo row direction me hi rhta hai ..
+flex-direction:row or column or row-reverse or column-reverse //
+__________________________________________________________________________________________________
+3.flex-wrap property - maanlo humne 4 box banaye vo 100%width lere hai container ki 1 row me
+ab humne  4 box aur add kiye to flex ki ek ye dikkat hai ki  vo us 4 new box ko bhi same hi row me add krdega 
+jo already 100%width le chuke they container ki //vo new boxes ko 2nd row me ni daalta 
+//isi liye wrap property aaii 
+
+flex-wrap:wrap //ye kr denge to new content dusri line me ajaega khud agar 1st row ki width 1005 use hogyi hogi 
+like 6 box they 1,2,3,4,5,6 
+by default flex-wrap:no-wrap; property use krta tha jisme sare box 1 line me ajate they 
+row1- box1 box2 box3 box4 box5 box6 ;
+
+jaise hi humne flex-wrap:wrap ; kia 
+boxes new rows me move hojate hai  acc to width given .
+ row1- box1 box2 box3 
+ row2 - box4 box5 box6
+
+flex-wrap:wrap-reverse; - isme boxes new rows me ho hote hai but unki order reverse hojata hai 
+like row1    box 6 box 5 box 4 
+     row2    box3  box3  box 1
+____________________________________________________________________________________________________
+
+4.flex-flow-shorthand notation hai flex direction and flex wrap ki 
+flex-flow: row wrap ;
+
+_________________________________________________
+5.justify-content //most important in flexbox 
+iski help se hum elements ko  arrange krte hai  in flexbox with respect to x-axis direction.
+
+justify-content:start ;//
+justify-content:end;
+justify-content:center; 
+justify-content:space-around;
+justify-content:space-between 
+justify-content:space-evenly .
+
+use this link -https://www.freecodecamp.org/news/css-flexbox-tutorial-with-cheatsheet/
+______________________________________________________________________________________________
+
+6.align-items - yaha elements ko arrange kr sakte hai flexbox me with respect to y-axis.
+align-items:strech,flex-start,flex-end,center .
+
+interview question - koe puche ki  hum flexbox me element ko center me kaise arrange kr sakte hai 
+with respect to x axis-direction and also y axis -direction both.
+
+ans - justify-content:center;krdo
+     align-items :center krdo ;
+
+     *****
+ one issue with align-items property [ye sirf jb single row hogi tbhi kaam krta hai 
+ yaani jb flex-wrap:no-wrap ;hoga tbhi kaam krta hai
+  _________________________________________________________________________________________
+7.align-content - tbhi aya bcz ye sirf multiple rows ke sath kaam karta hai 
+y-axis ke according//
+note - yaha flex-wrap property ka hona must hai with value wrap or wrap-reverse ..tbhi ye work karga ..
+
+//properties of align-content same rhti hai as justify-content 
+
+
+align-content:strech or flex-start or flex-end or center or space-between or space-evenly orspace-around ..
+______________________________________________________---
+some terminologies we seen ****
+justify hai to --vo x -axis pe kaam krta hai 
+align - y -axis 
+items - single row/column 
+content -multiple rows/colms
+_____________________________________________________________________________
+8.gap property 
+row-gap -2 rows ke between ka gap inc krdega 
+column-gap -columns ke bech ka space inc krdega 
+
+gap: 50px 10px ;aise bhi dete hai 
+    first row ka gap and sencond column ka gap .
+
+ ___________________________________________________________________________________________   
