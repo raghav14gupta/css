@@ -705,3 +705,26 @@ ________________________________________________________________________________
 
   __________________________________________________________________________________
   ((((((((((((((((((((((((((((((((((((((((((((((((((()))))))))))))))))))))))))))))))))))))))))))))))))))
+
+  grids layout //important
+  __________________________ 
+
+  ye 2d layout hota hai yaha multiple rows and columns ko ek sath layout kr sakte hai 
+  //flexbox hamara 1d strucutre tha vaha single row ya single column pe hi layout bana sakte they 
+  bcz 1d tha -ya to row pe flexbox use kr sakte thry ya column pe dono pe ek sath styling possible 
+  ni thi flexbox me  
+  tbhi grid aya yaha hum rows and column dono pe ek sath styling kr sakte hai .
+
+  //yaaha bhot sari properties hoti hai -
+  grid-template-column: 25% 25%(iska mtlab hua 2 column banengi with 25% width of container each)
+  or repeat(2,25%) ye bhi same kaam karega
+
+  //imp concept
+  justify-content and align content ye parent pe lagti hai properties 
+  yaani jb styling karenge to parent container move karenge 
+
+  ...and justify-items and align-items //child items pe lagti hai properties 
+  yaha jb styling karenge to parent container ke ander jo child element haii vo move honge///
+  yaha container ki position ni  change hori hoti bcz ye child element pe properties apply hoti h1
+  child element style hote hai ...
+  __________________________________________________________________________________
