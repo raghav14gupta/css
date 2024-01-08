@@ -728,3 +728,24 @@ ________________________________________________________________________________
   yaha container ki position ni  change hori hoti bcz ye child element pe properties apply hoti h1
   child element style hote hai ...
   __________________________________________________________________________________
+
+
+  responsive web design
+  ______________________ 
+
+  apni website ko responsive banana jaruri hai like hamari website laptop screen pe shi kaam kr ri hai 
+  per usko phone screen pe open kare to vo break hoja ri h to aisi website user experince kharab karegi 
+  bcz jaruri ni user har time same device se login krde
+
+  to yaha hum media query ki help lete hai 
+  iski help se hum  apni website ko responsive bana sakte hai 
+  like yaha hum breakpoint set krdete hai according to screen size 
+
+  320-480px = mobile phones 
+  481-768px = ipads,tablets 
+  769-1024px= small screeens and laptops 
+  1025-1200px = desktops,large screen 
+  1201px --so on = extra large screen like big monitors
+
+  jaise hi ye aspect ratio hit hoga hamari site auttomatically screen ke according interface ko  change kr legi ..
+  
