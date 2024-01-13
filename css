@@ -749,3 +749,211 @@ ________________________________________________________________________________
 
   jaise hi ye aspect ratio hit hoga hamari site auttomatically screen ke according interface ko  change kr legi ..
   
+
+  _______________________________________________________________________________________________
+  MEASUREMENT UNITS IN CSS 
+  ________________________  
+
+  two types ki  measurement unit hoti  hai  css me 
+  1.absolute - ye kisi dusre pe depend ni  rhti .fixed(static)size rhta hai 
+  like agar screen size change kare laptop se mobile pe tb bhi ye fix size hi lega according to 
+  screen size change ni hota ..
+  example - px ,cm,mm 
+
+  2-relative units - ye screen size pe dependent rhti hai ye fixed ni hoti 
+  like agar laptop screen se mobile screen pe gye to ye automatically apne size ko  adjust krleti hai
+  example - em , rem , % ,vh,vw
+
+  note- bydefault(background) ye sari relative units end me px me hi convert hojatti hai bcz browser ko vohi language samj aati hai
+  relative units dynamic hoti hai screen size ke according to humko faida milta hai responsive design banane me 
+  
+
+  *em = its takes px according to its parent container 
+  ex - 
+  <head> //iska font-size bydefault 16px hota h jisko change bhi kr sakte hai 
+    <body> //iska bhi bydefault 16px hota h
+       <div > //yaha humne 3em dia fontsize  // to ye convert hoga 3*16px(parent containe) = 48px
+           <p>//yaha dia 2rem fontsize //ye convert hoga 2*48px(parent) = 96px
+
+   *rem = ye tmhara root element ke base pe   value leta hai 
+   
+   ex - 
+   <head> -ye rootelement hota hai (body bhi as a root kaam kr sakti h) //bydefault 16px fontsize
+       <body> 
+          <div > //maanlo yaha 2rem dia font size =ye convert hoga 2*16px = 32px
+             <p>//yaha dia 3rem //ye bhi acc to root element value lega 3*16px = 48px
+
+   vh and vw = viewport(complete screen) ki height and width 
+   ye tmhare vh and vw according to viewport size apne ko change krte hai 
+   like viewport height and width = 400px 
+     humne di 
+         div - height = 25%vh and 25%vw 
+           yaani 400px ka 25% hua 100px to 
+           div ka height width hoga 100px          
+
+
+     difference betweeen % and vw or vh 
+    
+Parent Dependency:
+Percentage: Relative to the size of the containing (parent) element.
+Example: If a container has a width of 400 pixels, setting
+ a child element's width to 50% would make it 200 pixels wide (50% of the container's width).
+
+Viewport Width: Relative to the width of the viewport (browser window).
+Example: If you set an element's width to 50vw,
+ it means the width of that element will be 50% of the viewport's width.
+Responsive Behavior:
+Percentage: Responsiveness depends on the size of the containing element.
+Viewport Width: Provides responsiveness based on the size of the viewport.
+   
+_______________________________________________________________________________________________
+
+transitions and animations 
+________________________________ 
+
+basically transitions ki help se hum some duration period ke liye element ki properties me change 
+karva sakte hai smoothly 
+
+transition: shorthand to all properties 
+            height,width,background-color, 5s ,       ease,             2s; //abhi ye bg-color me transition apply hoga
+            (property)                  (duration) (timing-function)  (delay)
+            note - agar har property me ye transition lagani hai to har property ke baad duration,timing-function,delay likhna padega 
+            transition: height,5s,ease,2s,width,5s,ease,2s,vackground-color,5s,ease,2s;
+
+transition-property: kis css property me transition lagana hai 
+transition-duration: kitte time tk transition run hoga(whole time to complete full transition effect)
+transition-timing-function:specifices speed curve to transition (like start me slow end me fast or pura fast krdo etc).
+                           (bhot alag alag hoti h  - ease ,linear,ease-in etc)
+
+transition-delay: timer laga sakte h kitte delay ke baad transition start karna hai 
+
+//
+animation vs transitions ---
+transition me hum ek baar me sirf ek effect laga sakte hai element pe 
+like hover ke baad color red hogya blue se 
+hum aisa ni  kr sakte start hote time color  blue ho ,beech me red hojaye,end hote-hote green color 
+
+ye sb cheez hamari animations me possible hai *
+________________________________________________________________________________________________
+
+animations 
+____________
+
+@keyframe animation_name{
+  properties
+}
+here's a brief explanation of key CSS animation properties:
+
+animation-name:
+Specifies the name of the @keyframes rule that defines the animation's behavior.
+
+animation-duration:
+Sets the total duration of the animation in seconds or milliseconds.
+
+animation-timing-function:
+Defines the pacing of the animation, determining how intermediate values are calculated.
+
+animation-delay:
+Specifies the delay before the animation starts, in seconds or milliseconds.
+
+animation-iteration-count:
+Sets the number of times the animation cycle should repeat, or infinite for indefinite repetition.
+
+animation-direction:
+Defines whether the animation should play in reverse after each cycle or alternate back and forth.
+
+code- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @keyframes scaleAnimation {  //yaha keyframes ki help se btate hai kitte percentage pe element pe 
+                                 kya changes daalne hai animations ki help se
+      0% {
+        transform: scale(1);    //start time  (jb animation 0%complete thi(yaani start ni thi))
+                                    size bada kia box ka with bg color chnage
+        background-color: red;
+      }
+      50% {
+        transform: scale(1.5);//transfrom property
+        background-color: yellow;   //middle me (jb animation 50%complete hui)
+                                           jb animation pauchegi tb size aur inc with color change
+      }
+      100% {
+        transform: scale(1);    //end aate time (jb animation 100%complete hogyi)
+                                      size vaps dec with color change
+        background-color: blue;
+      }
+    }
+   //ye div box hai hamara
+    .box {  //properties hamesha element container pe lagai jaegi jisme animation lagani hai 
+
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      animation-name: scaleAnimation;
+      animation-duration: 3s;
+      animation-timing-function: ease-in-out;
+      animation-delay: 1s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-fill-mode: both;
+      animation-play-state: running;
+    }
+  </style>
+</head>
+<body>
+<div class="box"></div>  //ye humne ek div box banaya tha jisme animations lagani thi
+</body>
+</html>
+
+___________________________________________
+
+transform property_________________
+______________________________________________ 
+
+transform property ki  help se hum element ko change kr sakte hai
+The transform property in CSS is a versatile property used to apply various transformations to an element.
+ It allows you to modify the position, size, and rotation of an element.
+
+ animation ki help se some duration ke liye hum element ko visually change kr sakte they sirf 
+ like -color change.,animation speed change,etc 
+
+
+Basic Syntax:
+css
+
+transform: transform-function;
+
+Common Transform Functions:
+______________________________
+
+translate(x, y):
+Moves the element along the x-axis and y-axis.
+Example: transform: translate(20px, 30px);
+agar particular 1 direction me change krna hai to 
+transalateX ya translateY bhi  use kr sakte hai
+
+scale(x, y):
+Changes the size of the element along the x-axis and y-axis.
+Example: transform: scale(1.5, 1.2);
+
+rotate(angle):
+Rotates the element by a specified angle in degrees.
+Example: transform: rotate(45deg);
+
+skew(x-angle, y-angle):
+skew() function is used to skew (tilt) an element along the horizontal and/or vertical axis. 
+Skews the element along the x-axis and y-axis.
+Example: transform: skew(20deg, 10deg);
+
+matrix(a, b, c, d, e, f):
+Allows you to use a 2D transformation matrix for more complex transformations.
+Example: transform: matrix(1, 0.5, -0.5, 1, 20, 10);
+
+_____________________________________________________________________________________________________
+
+
+
