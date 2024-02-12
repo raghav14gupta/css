@@ -631,7 +631,7 @@ flex-flow: row wrap ;
 
 _________________________________________________
 5.justify-content //most important in flexbox 
-iski help se hum elements ko  arrange krte hai  in flexbox with respect to x-axis direction.
+iski help se hum elements ko  arrange krte hai  in flexbox with respect to x-axis(main) direction.
 
 justify-content:start ;//
 justify-content:end;
@@ -645,7 +645,7 @@ use this link -https://www.freecodecamp.org/news/css-flexbox-tutorial-with-cheat
 *
 ______________________________________________________________________________________________
 
-6.align-items - yaha elements ko arrange kr sakte hai flexbox me with respect to y-axis.
+6.align-items - yaha elements ko arrange kr sakte hai flexbox me with respect to y-axis(cross).
 align-items:strech,flex-start,flex-end,center .
 
 interview question - koe puche ki  hum flexbox me element ko center me kaise arrange kr sakte hai 
@@ -653,13 +653,25 @@ with respect to x axis-direction and also y axis -direction both.
 
 ans - justify-content:center;krdo
      align-items :center krdo ;
-
+or
+  
      *****
  one issue with align-items property [ye sirf jb single row hogi tbhi kaam krta hai 
  yaani jb flex-wrap:no-wrap ;hoga tbhi kaam krta hai
-  _________________________________________________________________________________________
-7.align-content - tbhi aya bcz ye sirf multiple rows ke sath kaam karta hai 
+******************************************
+for center the element on x and y axis both
+
+
+  shorthand  - place-content: center               center;
+                            (ye align content )  (ye justify content)
+  __________  flex-wrap:wrap hona chaiyeye(for align content) ____
+  
+  
+  ___________________________________________________________________________
+7.align-content - tbhi aya bcz ye sirf multiple rows ke sath kaam karta hai --flexwrap ki help se bhi hum element ko next row me shift krke bhi align content ko use kr sakte hai //agar multiple rows ni thi to.
 y-axis ke according//
+
+..agar align content ki help se center krna hai to 
 note - yaha flex-wrap property ka hona must hai with value wrap or wrap-reverse ..tbhi ye work karga ..
 
 //properties of align-content same rhti hai as justify-content 
