@@ -780,7 +780,8 @@ ________________________________________________________________________________
   relative units dynamic hoti hai screen size ke according to humko faida milta hai responsive design banane me 
   
 
-  *em = its takes px according to its parent container 
+  *em = its takes px according to its container font-size note:agar iske khudke container ka koe font-size ni hai
+       tb parent container ke font-size ke acc change hoga em. 
   ex - 
   <head> //iska font-size bydefault 16px hota h jisko change bhi kr sakte hai 
     <body> //iska bhi bydefault 16px hota h
