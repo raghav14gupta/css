@@ -790,7 +790,7 @@ ________________________________________________________________________________
    *rem = ye tmhara root element ke base pe   value leta hai 
    
    ex - 
-   <head> -ye rootelement hota hai (body bhi as a root kaam kr sakti h) //bydefault 16px fontsize
+   <html> -ye rootelement hota hai (body bhi as a root kaam kr sakti h) //bydefault 16px fontsize
        <body> 
           <div > //maanlo yaha 2rem dia font size =ye convert hoga 2*16px = 32px
              <p>//yaha dia 3rem //ye bhi acc to root element value lega 3*16px = 48px
